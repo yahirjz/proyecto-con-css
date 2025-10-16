@@ -1,0 +1,417 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@300;400;500;700;900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@300;400;500;700;900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+    margin: 0;
+    min-width: 375px;
+    font-family: 'Open sasns', 'Roboto', 'sans-serif';
+}
+.conter{
+    background-image: url("img/puntitos.svg");
+    height: 616px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header__conter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 18px 17px;
+}
+/*ocultamos el chekcbox*/
+.header__menu-toggle{
+    display: none;
+}
+/*Estilos del bóton*/
+.header__menu-boton{
+    display: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    position: relative; /*posicionamiento de las barras del icono*/
+    z-index: 100; /*aseguramos que este encima de los elementos*/
+}
+.header__menu-icon,
+.header__menu-icon::before,
+.header__menu-icon::after{
+    content: '';
+    display: block;
+    background-color: black;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 0.3s ease;
+    left: 5px;
+}
+.header__menu-icon{
+    top:18px
+}
+.header__menu-icon::before{
+    top: -10px ;
+}
+.header__menu-icon::after{
+    bottom: -10px;
+}
+/*Estilos para el menu de navegacion*/
+.header__nav{
+    display: none;
+    column-gap: 10px;
+    
+}
+.header__link{
+    text-decoration: none;
+    color: inherit;
+}
+.section__conter{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+.section__title{
+    min-width: 291px;
+    min-height: 96px;
+    text-align:center ;
+    font-weight: 700;
+    font-family: 'Open sasns' , 'sans-serif';
+    font-size:48px;
+}
+/*Visión de escritorio*/
+@media(min-width:768px){
+    .header__conter{
+        margin: 25px 40px 0 40px ;
+    }
+    .header__conter >img{
+        width: 95px;
+        height: 100px;
+        
+    }
+
+    .header__nav{
+        display: flex;
+        justify-content: space-around;
+        width: 428px;
+        height: 28px;
+        font-family: 'Roboto';
+        font-weight: 700;
+        font-size: 24px;
+    }
+    .header__menu-boton{
+        display: none;
+    }
+    /*Ajuste de mi imagen y mi titulo*/
+    .section__conter {
+        position: relative; /* Necesario para posicionar la imagen */
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .section__title{
+        max-width: 313px;
+      margin-bottom: 261px;
+      margin-top: 35px;
+    }
+   
+    .section__conter img {
+        position: absolute;
+        bottom: 0;
+        left: 87%;
+        transform: translateX(-50%); /* Centra la imagen horizontalmente */
+    }
+}
+
+/*vista móvil*/
+@media(max-width:768px){
+    .header__conter{
+        justify-content: space-between;
+    }
+    .header__menu-boton{
+        display:block;
+    }
+    .header__nav{
+        position: fixed;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header__link{
+        font-size: 24px;
+        margin: 20px 0;
+    }
+    /* --- Magia del Checkbox --- */
+    .header__menu-toggle:checked ~ .header__nav {
+        display: flex; /* Muestra el menú cuando el checkbox está activo */
+    }
+
+    /* Animación del ícono a una 'X' */
+    .header__menu-toggle:checked + .header__menu-boton .header__menu-icon {
+        background-color: transparent; /* La barra del medio desaparece */
+    }
+
+    .header__menu-toggle:checked + .header__menu-boton .header__menu-icon::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+    .header__menu-toggle:checked + .header__menu-boton .header__menu-icon::after {
+        transform: rotate(-45deg);
+        bottom: 0;
+    }
+}
+.section__img{
+    width: 318px;
+    height: 300px;
+}
+
+/*main*/
+
+.section{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    align-items: center;
+    height: 538px;
+    
+}
+
+.section__title--white{
+    color: #fafafa;
+}
+.section__parrafo{
+    color: white;
+    margin: 0 32px;
+    font-family: 'Roboto', 'sans-serif';
+    font-weight: 400;
+    font-size: 16px;
+}
+.section__span{
+    width:271px;
+    height: 28px;
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+    padding: 10px;
+}
+.section__parrafo--estilo-servicios{
+    color:#2C2C2C;
+    text-align: -webkit-center;
+    margin-bottom: 105px;
+}
+.section__img{
+    width: 80px;
+    height: 80px;
+    margin:auto auto;
+}
+.section__img--tamaño{
+    width: 138px;
+    height: 138px;
+}
+
+@media(min-width:768px){
+    .section{
+        width:1440px;
+       display: flex;
+       flex-direction: row-reverse;
+       justify-content: center;
+       column-gap: 90px;
+       
+    }
+    .section__img{
+        width:221px;
+        height: 221px;
+        margin: 20px;
+    }
+    .seccion1__conter{
+        width:532px;
+        height: 237px;
+       display: flex;
+       flex-direction: column;
+       align-items: start;
+    }
+
+}
+/*Mis servicions*/
+.section__servicios{
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 1325px;
+}
+.servicios__contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 271px;
+    height: 312px;
+    padding: 15px;
+}
+.section__subtitle{
+    width: 271px;
+    font-family: 'Open sasns' ;
+    font-weight: 700;
+    font-size: 32px;
+    text-align: center;
+}
+.section__subtitle--white{
+    color: #FAFAFA;
+}
+@media(min-width:768px){
+    .section__servicios{
+        height: 700px;
+    }
+    .servicios__conter-primario{
+        display: flex;
+        justify-content: space-around;
+        column-gap: 233px;
+    }
+   .section__title-tamaño{
+    margin:0;
+    padding-top: 59px;
+   }
+
+}
+/*formularion*/
+.formulario{
+    background-color: #141414;
+    color: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+   
+    height: 660px;   
+    align-items: center; 
+    
+}
+.formulario__title{
+    width:271px;
+    height: 55.81px;
+    font-family: 'Open sasns' , 'sans-serif';
+    text-align: center;
+    font-weight: 700;
+    font-size: 48px;
+}
+.formulario__contenedor{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 9px auto;
+    
+}
+.formulario__label{
+    width: 54px;
+    height: 15px;
+    font-family: 'Ronoto',sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+
+}
+.formulario__input {
+    width: 345px;
+    height: 45px;
+    margin-bottom: 27px;
+    border : 3px #2C2C2C solid;
+}
+
+.formulario__mensaje{
+    width:335px;
+    height:113px;
+    margin-bottom: 60px;
+    border : 3px #2C2C2C solid;
+}
+.formulario__boton{
+    background-color: #FFD953;
+    border:none;
+    border-radius: 4px ;
+    width: 340px;
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #141414;
+}
+@media(min-width:768px){
+    .formulario{
+        height: 660px;
+        flex-direction: row;
+        justify-content: center;
+        column-gap:77px;
+    }
+    /*modificar posicione de titulos */
+    .formulario__title{
+        max-width: 335px;
+        transform: translateY(-200px);
+    }
+    
+}
+/*Footer*/
+.footer{
+    background-color: #DBDBDB;
+    display: flex;
+    flex-direction: column;
+  
+    height: 493px;
+    row-gap: 18px;
+    
+}
+.footer__img{
+    width:77px;
+    height: 71px;
+    margin: 53px 0 0 19px;
+}
+.footer__copy-text{
+    font-family: 'Roboto';
+    font-weight:400;
+    font-size:13px;
+    margin: 0 0 59px 19px;
+    
+}
+
+.footer__svg{
+   margin-left: 19px;
+   display: flex;
+   align-items: center;
+
+}
+svg{
+    width:27px;
+    height:27px ;
+}
+span{
+    width:73px;
+    height:19px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    margin-left: 5px;
+}
+.foooter__redes{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    margin-left: 19px;
+}
+@media(min-width:768px){
+    .footer{
+        height: 346px;
+        background: url("img/puntitos.svg");
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+   .footer__copy{
+    padding-left: 50px;
+   }
+   .foooter__redes{
+    row-gap: 30px;
+    padding-right: 100px;
+   }
+
+}
